@@ -9,22 +9,25 @@ const selectColor = randomColor({
   luminosity: luminosityColor,
 });
 
-let x = 31;
-const y = 9;
-let square = '';
-
-for (let row = 1; row <= y; row++) {
-  for (let column = 1; column <= x; column++) {
-    if (column === 14 && row === 5) {
-      square += chalk.hex(selectColor)(selectColor);
-      column += 6;
-    } else if (column > 3 && column < 29 && row > 3 && row < 7) {
-      square += ' ';
-    } else {
-      square += chalk.hex(selectColor)('#');
+if (process.argv[2] === 'ask') {
+  console.log('gimme color and luminosity');
+} else {
+  let x = 31;
+  const y = 9;
+  let square = '';
+  for (let row = 1; row <= y; row++) {
+    for (let column = 1; column <= x; column++) {
+      if (column === 14 && row === 5) {
+        square += chalk.hex(selectColor)(selectColor);
+        column += 6;
+      } else if (column > 3 && column < 29 && row > 3 && row < 7) {
+        square += ' ';
+      } else {
+        square += chalk.hex(selectColor)('#');
+      }
     }
+    square += '\n';
   }
-  square += '\n';
-}
 
-console.log(square);
+  console.log(square);
+}
