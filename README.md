@@ -1,6 +1,7 @@
 # Random Color Generator
 
 A simple color generator
+find on [gitHub](https://github.com/Konstantin-exe/Random-Color-Generator)
 
 ## Installation
 
