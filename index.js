@@ -9,23 +9,21 @@ const selectColor = randomColor({
   luminosity: luminosityColor,
 });
 
-// console.log(chalk.hex(selectColor)(selectColor));
-
-const x = 31;
+let x = 31;
 const y = 9;
 let square = '';
 
 for (let row = 1; row <= y; row++) {
   for (let column = 1; column <= x; column++) {
-    if (column === 15 && row === 5) {
+    if (column === 14 && row === 5) {
       square += chalk.hex(selectColor)(selectColor);
-    } else if (column > 3 && column < 28 && row > 3 && row < 7) {
+      column += 6;
+    } else if (column > 3 && column < 29 && row > 3 && row < 7) {
       square += ' ';
     } else {
-      square += '#';
+      square += chalk.hex(selectColor)('#');
     }
   }
-
   square += '\n';
 }
 
