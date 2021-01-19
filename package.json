@@ -1,0 +1,8 @@
+{
+  "name": "Random-Color-Generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Konstantin-exe/Random-Color-Generator.git",
+  "author": "Konstantin-exe <konstantinmuellner@gmail.com>",
+  "license": "MIT"
+}
