@@ -11,6 +11,20 @@ Install via [yarn]
 yarn install
 ```
 
+## Modules
+
+npm randomColor
+
+```bash
+yarn add randomColor
+```
+
+npm chalk
+
+```bash
+yarn add chalk
+```
+
 ## Usage
 
 you have different commands for use
