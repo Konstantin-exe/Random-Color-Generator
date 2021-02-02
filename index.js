@@ -12,7 +12,7 @@ const selectColor = randomColor({
 if (process.argv[2] === 'ask') {
   console.log('gimme color and luminosity');
 } else {
-  let x = 31;
+  const x = 31;
   const y = 9;
   let square = '';
   for (let row = 1; row <= y; row++) {
