@@ -4,30 +4,29 @@ const chalk = require('chalk');
 const hueColor = process.argv[2];
 const luminosityColor = process.argv[3];
 
-const selectColor = randomColor({
+const selectedColor = randomColor({
   hue: hueColor,
   luminosity: luminosityColor,
 });
 
-if (process.argv[2] === 'ask') {
+if (process.argv[2] === undefined) {
   console.log('gimme color and luminosity');
 } else {
-  const x = 31;
-  const y = 9;
+  const amountColumn = 31;
+  const amountRow = 9;
   let square = '';
-  for (let row = 1; row <= y; row++) {
-    for (let column = 1; column <= x; column++) {
+  for (let row = 1; row <= amountRow; row++) {
+    for (let column = 1; column <= amountColumn; column++) {
       if (column === 14 && row === 5) {
-        square += chalk.hex(selectColor)(selectColor);
+        square += selectedColor;
         column += 6;
       } else if (column > 3 && column < 29 && row > 3 && row < 7) {
         square += ' ';
       } else {
-        square += chalk.hex(selectColor)('#');
+        square += '#';
       }
     }
     square += '\n';
   }
-
-  console.log(square);
+  console.log(chalk.hex(selectedColor)(square.replace(/\n+$/, '')));
 }
